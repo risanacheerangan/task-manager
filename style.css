@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#addTaskBtn {
+    background-color: #2563eb;
+    color: white;
+}
+
+.task-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+
+.task-column {
+    flex: 1;
+    min-height: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.task-column h2 {
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    width: 400px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.close {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #2563eb;
+    color: white;
+    margin-top: 10px;
+}
