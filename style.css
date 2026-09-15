@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #efe3d0;
+    color: #3e2723;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 45px;
+
+    background: #5d4037;
+    color: #fff8e7;
+
+    border-bottom: 5px solid #8d6e63;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+
+/* Add Task Button */
+
+#addTaskBtn {
+    background: #c49a6c;
+    color: #2f1b14;
+
+    padding: 12px 22px;
+
+    border: 2px solid #e6c9a8;
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#addTaskBtn:hover {
+    background: #d8b58a;
+    transform: translateY(-2px);
+}
+
+
+/* Three Columns */
+
+.task-container {
+    display: flex;
+    gap: 25px;
+
+    padding: 35px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* Individual Column */
+
+.task-column {
+    flex: 1;
+
+    min-height: 450px;
+
+    background: #f8f0e3;
+
+    padding: 20px;
+
+    border: 2px solid #a1887f;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 12px rgba(62, 39, 35, 0.15);
+}
+
+.task-column h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+
+    text-align: center;
+
+    color: #5d4037;
+
+    border-bottom: 2px solid #c49a6c;
+}
+
+
+/* Task Card */
+
+.task-card {
+    background: #fffaf0;
+
+    border: 1px solid #bcaaa4;
+    border-left: 6px solid #795548;
+
+    border-radius: 8px;
+
+    padding: 16px;
+
+    margin-top: 15px;
+
+    box-shadow: 0 3px 7px rgba(62, 39, 35, 0.12);
+
+    transition: 0.2s;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 12px rgba(62, 39, 35, 0.2);
+}
+
+.task-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    color: #4e342e;
+}
+
+.task-card p {
+    color: #5d4037;
+    line-height: 1.5;
+}
+
+
+/* Task Card Buttons */
+
+.task-card button {
+    padding: 8px 14px;
+
+    margin-right: 6px;
+    margin-top: 8px;
+
+    border-radius: 6px;
+
+    border: 1px solid #8d6e63;
+
+    background: #d7b899;
+    color: #3e2723;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    cursor: pointer;
+}
+
+.task-card button:hover {
+    background: #c49a6c;
+}
+
+
+/* Modal Background */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(62, 39, 35, 0.65);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* Modal */
+
+.modal-content {
+    background: #f8f0e3;
+
+    width: 420px;
+    max-width: 100%;
+
+    padding: 30px;
+
+    border: 3px solid #795548;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+
+    text-align: center;
+
+    color: #5d4037;
+}
+
+
+/* Close Button */
+
+.close {
+    position: absolute;
+
+    right: 18px;
+    top: 12px;
+
+    font-size: 28px;
+
+    color: #5d4037;
+
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #8d6e63;
+}
+
+
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+form label {
+    font-weight: bold;
+
+    color: #4e342e;
+
+    margin-top: 6px;
+}
+
+
+/* Input Fields */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 11px;
+
+    background: #fffaf0;
+
+    border: 1px solid #a1887f;
+    border-radius: 6px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    color: #3e2723;
+
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border: 2px solid #795548;
+}
+
+textarea {
+    min-height: 90px;
+
+    resize: vertical;
+}
+
+
+/* Form Submit Button */
+
+form button {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #795548;
+
+    color: #fff8e7;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #5d4037;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .task-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    header {
+        padding: 18px 20px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+}
