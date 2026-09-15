@@ -10,6 +10,7 @@ const completedTasks = document.getElementById("completedTasks");
 
 // Get saved tasks from localStorage
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let editingTaskId = null;
 
 
 // Open Add Task window
@@ -46,28 +47,47 @@ taskForm.onsubmit = function (event) {
         return;
     }
 
-    let newTask = {
-        id: Date.now(),
-        title: title,
-        description: description,
-        assignedTo: assignedTo,
-        status: status,
-        createdAt: new Date().toLocaleString(),
-        updatedAt: new Date().toLocaleString()
-    };
+    // EDIT EXISTING TASK
+    if (editingTaskId != null) {
 
-    tasks.push(newTask);
+        let task = tasks.find(function (task) {
+            return task.id == editingTaskId;
+        });
 
-    // Save tasks
+        task.title = title;
+        task.description = description;
+        task.assignedTo = assignedTo;
+        task.status = status;
+
+        // Created time stays unchanged
+        // Only Updated time changes
+        task.updatedAt = new Date().toLocaleString();
+
+        editingTaskId = null;
+
+    }
+
+    // ADD NEW TASK
+    else {
+
+        let newTask = {
+            id: Date.now(),
+            title: title,
+            description: description,
+            assignedTo: assignedTo,
+            status: status,
+            createdAt: new Date().toLocaleString(),
+            updatedAt: new Date().toLocaleString()
+        };
+
+        tasks.push(newTask);
+    }
+
     saveTasks();
-
-    // Show tasks
     displayTasks();
 
-    // Clear form
     taskForm.reset();
 
-    // Close modal
     taskModal.style.display = "none";
 };
 
